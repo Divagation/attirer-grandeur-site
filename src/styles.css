@@ -251,14 +251,51 @@ body {
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 0.05em;
-  transition: opacity var(--transition-fast);
+  transition: all var(--transition-normal);
   padding: var(--space-xs);
+  display: inline-block;
 }
 
 .artist-link:hover,
 .artist-link:focus-visible {
-  opacity: 0.6;
-  text-decoration: underline;
+  transform: scale(1.3);
+  text-decoration: none;
+}
+
+/* Unique color for each artist */
+.artist-link:nth-of-type(1):hover,
+.artist-link:nth-of-type(11):hover,
+.artist-link:nth-of-type(21):hover,
+.artist-link:nth-of-type(31):hover {
+  color: #D32F2F; /* BXHD - Cardinal Red */
+}
+
+.artist-link:nth-of-type(3):hover,
+.artist-link:nth-of-type(13):hover,
+.artist-link:nth-of-type(23):hover,
+.artist-link:nth-of-type(33):hover {
+  color: #1DA0C3; /* Hocs - Blue */
+}
+
+.artist-link:nth-of-type(5):hover,
+.artist-link:nth-of-type(15):hover,
+.artist-link:nth-of-type(25):hover,
+.artist-link:nth-of-type(35):hover {
+  color: #E1306C; /* baa.haus - Pink */
+}
+
+.artist-link:nth-of-type(7):hover,
+.artist-link:nth-of-type(17):hover,
+.artist-link:nth-of-type(27):hover,
+.artist-link:nth-of-type(37):hover {
+  color: #4CAF50; /* amcena - Green */
+}
+
+.artist-link:nth-of-type(9):hover,
+.artist-link:nth-of-type(19):hover,
+.artist-link:nth-of-type(29):hover,
+.artist-link:nth-of-type(39):hover {
+  color: #FFC107; /* Swurvey - Yellow */
 }
 
 .separator {
