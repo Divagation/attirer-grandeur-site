@@ -13,6 +13,9 @@ import { marked } from 'marked';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Base path for GitHub Pages (e.g., '/attirer-grandeur-site' or '' for root domain)
+const BASE_PATH = process.env.BASE_PATH || '';
+
 // Paths
 const CONTENT_DIR = path.join(__dirname, 'content', 'posts');
 const SRC_DIR = path.join(__dirname, 'src');
@@ -27,6 +30,13 @@ const SITE = {
   url: 'https://attirergrandeur.com',
   author: 'Attirer Grandeur'
 };
+
+/**
+ * Add base path to URL
+ */
+function url(path) {
+  return BASE_PATH + path;
+}
 
 /**
  * Ensure directory exists
@@ -124,12 +134,12 @@ async function generateIndex(posts) {
         ${recentPosts.map(post => `
           <article class="post-card">
             <time datetime="${post.date.toISOString()}">${formatDate(post.date)}</time>
-            <h3><a href="/blog/${post.slug}">${post.title}</a></h3>
+            <h3><a href="${url(`/blog/${post.slug}`)}">${post.title}</a></h3>
             <p>${post.excerpt}</p>
           </article>
         `).join('')}
       </div>
-      <a href="/blog" class="view-all">View all posts →</a>
+      <a href="${url('/blog')}" class="view-all">View all posts →</a>
     </section>
   ` : '';
 
@@ -164,7 +174,7 @@ async function generateBlogIndex(posts) {
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="blog-header">
-    <h1><a href="/">Attirer Grandeur</a></h1>
+    <h1><a href="${url('/')}">Attirer Grandeur</a></h1>
     <p>Journal</p>
   </header>
 
@@ -173,7 +183,7 @@ async function generateBlogIndex(posts) {
       ${posts.map(post => `
         <article class="post-card">
           <time datetime="${post.date.toISOString()}">${formatDate(post.date)}</time>
-          <h2><a href="/blog/${post.slug}">${post.title}</a></h2>
+          <h2><a href="${url(`/blog/${post.slug}`)}">${post.title}</a></h2>
           <p>${post.excerpt}</p>
         </article>
       `).join('')}
@@ -181,7 +191,7 @@ async function generateBlogIndex(posts) {
   </main>
 
   <footer class="site-footer">
-    <p><a href="/">← Back to home</a></p>
+    <p><a href="${url('/')}">← Back to home</a></p>
   </footer>
 
   <script>${script}</script>
@@ -225,7 +235,7 @@ async function generatePosts(posts) {
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="blog-header">
-    <h1><a href="/">Attirer Grandeur</a></h1>
+    <h1><a href="${url('/')}">Attirer Grandeur</a></h1>
   </header>
 
   <main id="main" class="post-content">
@@ -241,7 +251,7 @@ async function generatePosts(posts) {
   </main>
 
   <footer class="site-footer">
-    <p><a href="/blog">← Back to journal</a></p>
+    <p><a href="${url('/blog')}">← Back to journal</a></p>
   </footer>
 
   <script>${script}</script>
