@@ -177,9 +177,15 @@ body {
 }
 
 @media (max-width: 640px) {
+  .cta-buttons {
+    width: 100%;
+    padding: 0 var(--space-md);
+  }
+
   .btn {
     width: 100%;
     max-width: 300px;
+    justify-content: center;
   }
 }
 
@@ -204,7 +210,10 @@ body {
   gap: var(--space-md);
   white-space: nowrap;
   animation: scroll-left 30s linear infinite;
+  -webkit-animation: scroll-left 30s linear infinite;
   will-change: transform;
+  -webkit-transform: translateZ(0); /* Force GPU acceleration on mobile */
+  transform: translateZ(0);
 }
 
 @keyframes scroll-left {
@@ -216,10 +225,22 @@ body {
   }
 }
 
+@-webkit-keyframes scroll-left {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .artist-strip-track {
     animation: none;
+    -webkit-animation: none;
   }
 
   .artist-strip {
