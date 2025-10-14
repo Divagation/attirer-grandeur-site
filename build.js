@@ -145,6 +145,7 @@ async function generateIndex(posts) {
 
   // Inject styles, script, and blog preview
   let html = template
+    .replace('href="/feed.xml"', `href="${url('/feed.xml')}"`)
     .replace('</head>', `<style>${styles}</style></head>`)
     .replace('</body>', `${blogPreview}<script>${script}</script></body>`);
 
