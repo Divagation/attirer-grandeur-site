@@ -161,6 +161,19 @@ body {
 .btn .icon {
   width: 1.25rem;
   height: 1.25rem;
+  transition: color var(--transition-fast);
+}
+
+/* Ko-fi heart turns red on hover */
+.btn-kofi:hover .icon,
+.btn-kofi:focus-visible .icon {
+  color: #FF5E5B;
+}
+
+/* Instagram icon turns pink on hover */
+.btn-instagram:hover .icon,
+.btn-instagram:focus-visible .icon {
+  color: #E1306C;
 }
 
 @media (max-width: 640px) {
