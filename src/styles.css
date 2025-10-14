@@ -164,10 +164,10 @@ body {
   transition: color var(--transition-fast);
 }
 
-/* Ko-fi heart turns red on hover */
+/* Ko-fi heart turns red on hover (matches brand logo) */
 .btn-kofi:hover .icon,
 .btn-kofi:focus-visible .icon {
-  color: #FF5E5B;
+  color: #D32F2F;
 }
 
 /* Instagram icon turns pink on hover */
