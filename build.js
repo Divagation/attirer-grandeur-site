@@ -134,12 +134,12 @@ async function generateIndex(posts) {
         ${recentPosts.map(post => `
           <article class="post-card">
             <time datetime="${post.date.toISOString()}">${formatDate(post.date)}</time>
-            <h3><a href="${url(`/blog/${post.slug}`)}">${post.title}</a></h3>
+            <h3><a href="${url(`/blog/${post.slug}.html`)}">${post.title}</a></h3>
             <p>${post.excerpt}</p>
           </article>
         `).join('')}
       </div>
-      <a href="${url('/blog')}" class="view-all">View all posts →</a>
+      <a href="${url('/blog/')}" class="view-all">View all posts →</a>
     </section>
   ` : '';
 
@@ -183,7 +183,7 @@ async function generateBlogIndex(posts) {
       ${posts.map(post => `
         <article class="post-card">
           <time datetime="${post.date.toISOString()}">${formatDate(post.date)}</time>
-          <h2><a href="${url(`/blog/${post.slug}`)}">${post.title}</a></h2>
+          <h2><a href="${url(`/blog/${post.slug}.html`)}">${post.title}</a></h2>
           <p>${post.excerpt}</p>
         </article>
       `).join('')}
@@ -251,7 +251,7 @@ async function generatePosts(posts) {
   </main>
 
   <footer class="site-footer">
-    <p><a href="${url('/blog')}">← Back to journal</a></p>
+    <p><a href="${url('/blog/')}">← Back to journal</a></p>
   </footer>
 
   <script>${script}</script>
