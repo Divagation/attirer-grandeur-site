@@ -176,6 +176,12 @@ body {
   color: #E1306C;
 }
 
+/* Bandcamp icon turns blue on hover */
+.btn-bandcamp:hover .icon,
+.btn-bandcamp:focus-visible .icon {
+  color: #1DA0C3;
+}
+
 @media (max-width: 640px) {
   .cta-buttons {
     width: 100%;
