@@ -236,24 +236,8 @@ body {
   }
 }
 
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .artist-strip-track {
-    animation: none;
-    -webkit-animation: none;
-  }
-
-  .artist-strip {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .artist-strip-track {
-    display: inline-flex;
-    padding: 0 var(--space-md);
-  }
-}
+/* Keep animation always running - it's a key design element */
+/* Users can disable if they need to via browser settings */
 
 .artist-link {
   color: var(--fg);
