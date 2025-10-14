@@ -215,11 +215,13 @@ body {
   align-items: center;
   gap: var(--space-md);
   white-space: nowrap;
-  animation: scroll-left 30s linear infinite;
-  -webkit-animation: scroll-left 30s linear infinite;
+  animation: scroll-left 40s linear infinite;
+  -webkit-animation: scroll-left 40s linear infinite;
   will-change: transform;
   -webkit-transform: translateZ(0); /* Force GPU acceleration on mobile */
   transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @keyframes scroll-left {
@@ -262,39 +264,24 @@ body {
   text-decoration: none;
 }
 
-/* Unique color for each artist */
-.artist-link:nth-of-type(1):hover,
-.artist-link:nth-of-type(11):hover,
-.artist-link:nth-of-type(21):hover,
-.artist-link:nth-of-type(31):hover {
+/* Unique color for each artist (5n pattern for 5 artists repeated) */
+.artist-link:nth-of-type(5n+1):hover {
   color: #D32F2F; /* BXHD - Cardinal Red */
 }
 
-.artist-link:nth-of-type(3):hover,
-.artist-link:nth-of-type(13):hover,
-.artist-link:nth-of-type(23):hover,
-.artist-link:nth-of-type(33):hover {
+.artist-link:nth-of-type(5n+2):hover {
   color: #1DA0C3; /* Hocs - Blue */
 }
 
-.artist-link:nth-of-type(5):hover,
-.artist-link:nth-of-type(15):hover,
-.artist-link:nth-of-type(25):hover,
-.artist-link:nth-of-type(35):hover {
+.artist-link:nth-of-type(5n+3):hover {
   color: #E1306C; /* baa.haus - Pink */
 }
 
-.artist-link:nth-of-type(7):hover,
-.artist-link:nth-of-type(17):hover,
-.artist-link:nth-of-type(27):hover,
-.artist-link:nth-of-type(37):hover {
+.artist-link:nth-of-type(5n+4):hover {
   color: #4CAF50; /* amcena - Green */
 }
 
-.artist-link:nth-of-type(9):hover,
-.artist-link:nth-of-type(19):hover,
-.artist-link:nth-of-type(29):hover,
-.artist-link:nth-of-type(39):hover {
+.artist-link:nth-of-type(5n+5):hover {
   color: #FFC107; /* Swurvey - Yellow */
 }
 
