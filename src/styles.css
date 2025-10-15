@@ -588,24 +588,17 @@ body {
    ============================================ */
 .site-footer {
   text-align: center;
-  padding: var(--space-xl) var(--space-md);
+  padding: 0;
   margin-top: var(--space-xl);
+  width: 100%;
 }
 
 .footer-cardinal {
-  max-width: 400px;
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
-}
-
-@media (max-width: 640px) {
-  .footer-cardinal {
-    max-width: 280px;
-  }
 }
 
 .site-footer a {
