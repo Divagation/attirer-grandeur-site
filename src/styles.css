@@ -107,6 +107,39 @@ body {
   max-width: 90vw;
 }
 
+/* Scroll indicator arrow */
+.scroll-arrow {
+  position: absolute;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  height: 3rem;
+  color: var(--fg);
+  opacity: 0.6;
+  animation: blink 2s ease-in-out infinite;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.scroll-arrow.hidden {
+  opacity: 0;
+}
+
+.scroll-arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.15;
+  }
+}
+
 /* Brand Logo / Name */
 .brand-logo {
   font-family: 'Great Vibes', cursive;

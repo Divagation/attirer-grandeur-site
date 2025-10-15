@@ -72,6 +72,13 @@
         </a>
       </div>
     </div>
+
+    <!-- Scroll indicator arrow -->
+    <div class="scroll-arrow" id="scrollArrow" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
+    </div>
   </main>
 
   <!-- Scrolling Artist Names Strip (Bottom) -->
@@ -204,5 +211,24 @@
   </div>
 
   <!-- Note: Blog preview section will be injected by build script -->
+
+  <script>
+    // Hide scroll arrow on scroll
+    (function() {
+      const scrollArrow = document.getElementById('scrollArrow');
+      let hasScrolled = false;
+
+      function hideArrow() {
+        if (!hasScrolled && window.scrollY > 50) {
+          hasScrolled = true;
+          scrollArrow.classList.add('hidden');
+          // Remove listener after first scroll
+          window.removeEventListener('scroll', hideArrow);
+        }
+      }
+
+      window.addEventListener('scroll', hideArrow, { passive: true });
+    })();
+  </script>
 </body>
 </html>
