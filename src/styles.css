@@ -113,10 +113,10 @@ body {
   bottom: 10rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 4rem;
   color: var(--fg);
-  opacity: 0.6;
+  opacity: 1;
   animation: blink 2s ease-in-out infinite;
   transition: opacity var(--transition-normal);
   pointer-events: none;
@@ -133,10 +133,10 @@ body {
 
 @keyframes blink {
   0%, 100% {
-    opacity: 0.6;
+    opacity: 1;
   }
   50% {
-    opacity: 0.15;
+    opacity: 0;
   }
 }
 
