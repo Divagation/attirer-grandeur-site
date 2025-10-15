@@ -588,8 +588,18 @@ body {
    ============================================ */
 .site-footer {
   text-align: center;
-  padding: var(--space-lg) var(--space-md);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: var(--space-xl) var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.footer-cardinal {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .site-footer a {
