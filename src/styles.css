@@ -624,6 +624,10 @@ body {
     padding-bottom: 6rem;
   }
 
+  .scroll-arrow {
+    bottom: 4rem;
+  }
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
