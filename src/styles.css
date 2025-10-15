@@ -593,13 +593,19 @@ body {
 }
 
 .footer-cardinal {
-  max-width: 200px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
+}
+
+@media (max-width: 640px) {
+  .footer-cardinal {
+    max-width: 280px;
+  }
 }
 
 .site-footer a {

@@ -147,7 +147,8 @@ async function generateIndex(posts) {
   let html = template
     .replace('href="/feed.xml"', `href="${url('/feed.xml')}"`)
     .replace('</head>', `<style>${styles}</style></head>`)
-    .replace('</body>', `${blogPreview}<script>${script}</script></body>`);
+    .replace('<!-- INJECT_BLOG_PREVIEW -->', blogPreview)
+    .replace('</body>', `<script>${script}</script></body>`);
 
   await fs.writeFile(path.join(PUBLIC_DIR, 'index.html'), html);
   console.log('✓ Generated index.html');
