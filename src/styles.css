@@ -124,6 +124,7 @@ body {
 
 .scroll-arrow.hidden {
   opacity: 0;
+  animation: none;
 }
 
 .scroll-arrow svg {
