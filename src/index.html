@@ -212,24 +212,5 @@
   </div>
 
   <!-- Note: Blog preview section will be injected by build script -->
-
-  <script>
-    // Hide scroll arrow on scroll
-    (function() {
-      const scrollArrow = document.getElementById('scrollArrow');
-      let hasScrolled = false;
-
-      function hideArrow() {
-        if (!hasScrolled && window.scrollY > 50) {
-          hasScrolled = true;
-          scrollArrow.classList.add('hidden');
-          // Remove listener after first scroll
-          window.removeEventListener('scroll', hideArrow);
-        }
-      }
-
-      window.addEventListener('scroll', hideArrow, { passive: true });
-    })();
-  </script>
 </body>
 </html>

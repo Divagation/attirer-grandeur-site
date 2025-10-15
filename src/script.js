@@ -112,6 +112,27 @@
   }
 
   /**
+   * Hide scroll arrow when user scrolls
+   */
+  function initScrollArrow() {
+    const scrollArrow = document.getElementById('scrollArrow');
+    if (!scrollArrow) return; // Only run on pages with scroll arrow
+
+    let hasScrolled = false;
+
+    function hideArrow() {
+      if (!hasScrolled && window.scrollY > 50) {
+        hasScrolled = true;
+        scrollArrow.classList.add('hidden');
+        // Remove listener after first scroll
+        window.removeEventListener('scroll', hideArrow);
+      }
+    }
+
+    window.addEventListener('scroll', hideArrow, { passive: true });
+  }
+
+  /**
    * Initialize all enhancements when DOM is ready
    */
   function init() {
@@ -120,6 +141,7 @@
     initExternalLinks();
     initButtonFeedback();
     initLazyLoading();
+    initScrollArrow();
   }
 
   // Run on DOM ready
